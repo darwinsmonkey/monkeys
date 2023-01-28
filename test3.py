@@ -13,16 +13,17 @@ class matrix:
         self.a = int
 
     def main(self):
-        matrix_temp = np.zeros((len(self.matrix-1), len(self.matrix[0]-1)), float)
+        matrix_temp = np.zeros((len(self.matrix)-1, len(self.matrix[0])-1), float)
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[0])):
-                matrix_temp += matrix[0][i] * ((-1) ** (i + j)) * self.row_col_del()
+                matrix_temp = matrix_temp + (matrix[0][i] * ((-1) ** (i + j))) * self.row_col_del()
         return matrix_temp
 
     def row_col_del(self):
-        self.matrix = np.delete(self.matrix, 0, 0)
-        self.matrix = np.delete(self.matrix, 0, 1)
-
+        matrix_temp2 = self.matrix
+        matrix_temp2 = np.delete(matrix_temp2, 0, 0)
+        matrix_temp2 = np.delete(matrix_temp2, 0, 1)
+        return matrix_temp2
 
 M1 = matrix(matrix1)
 print(M1.main())
